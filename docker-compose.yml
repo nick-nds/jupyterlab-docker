@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: jupyter.dockerfile
+    container_name: jupyterlab
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/notebooks
+        #entrypoint: sh -c 'jupyter-lab --ip=0.0.0.0 --port=8888 --no-browser --notebook-dir=/opt/app/data --allow-root'
+    entrypoint: sh -c 'jupyter-lab'

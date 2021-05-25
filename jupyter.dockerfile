@@ -66,7 +66,7 @@ RUN MPLBACKEND=Agg python -c "import matplotlib.pyplot" && \
 
 USER $NB_UID
 
-mkdir $HOME/notebooks
+RUN mkdir $HOME/notebooks
 
 WORKDIR $HOME/notebooks
 
